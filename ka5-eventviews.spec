@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		eventviews
 Summary:	Library for creating events
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7f2139325da7a3387891aea192537483
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	30a4a9abd41f7a3764202931e3da7eaf
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -21,12 +21,12 @@ BuildRequires:	gettext-devel
 BuildRequires:	ka5-akonadi-calendar-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka5-calendarsupport-devel >= %{kdeappsver}
-BuildRequires:	ka5-kcalcore-devel >= %{kdeappsver}
 BuildRequires:	ka5-kcalutils-devel >= %{kdeappsver}
 BuildRequires:	ka5-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkdepim-devel >= %{kdeappsver}
 BuildRequires:	kdiagram-devel >= 1.4.0
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kcalendarcore-devel >= %{kframever}
 BuildRequires:	kf5-kcodecs-devel >= %{kframever}
 BuildRequires:	kf5-kcompletion-devel >= %{kframever}
 BuildRequires:	kf5-kguiaddons-devel >= %{kframever}
@@ -84,11 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/eventviews.categories
-/etc/xdg/eventviews.renamecategories
 %attr(755,root,root) %ghost %{_libdir}/libKF5EventViews.so.5
 %attr(755,root,root) %{_libdir}/libKF5EventViews.so.5.*.*
 %{_datadir}/kservicetypes5/calendardecoration.desktop
+%{_datadir}/qlogging-categories5/eventviews.categories
+%{_datadir}/qlogging-categories5/eventviews.renamecategories
 
 %files devel
 %defattr(644,root,root,755)
