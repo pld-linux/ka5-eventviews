@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		eventviews
 Summary:	Library for creating events
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7a6a544f0d9f9d3aa22a5cef9203d4f4
+# Source0-md5:	9cc3765ade0ee95a2e000fe4ad8923b5
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -98,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %ghost %{_libdir}/libKF5EventViews.so.5
 %attr(755,root,root) %{_libdir}/libKF5EventViews.so.*.*.*
-%{_datadir}/kservicetypes5/calendardecoration.desktop
 %{_datadir}/qlogging-categories5/eventviews.categories
 %{_datadir}/qlogging-categories5/eventviews.renamecategories
 
