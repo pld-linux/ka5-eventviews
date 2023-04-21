@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		eventviews
 Summary:	Library for creating events
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	3
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	0565f154b9c4252b8c347ba99c4644b7
+# Source0-md5:	5365a67b8caad9d3710b0de3f43f68aa
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -96,14 +96,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF5EventViews.so.5
-%attr(755,root,root) %{_libdir}/libKF5EventViews.so.*.*.*
 %{_datadir}/qlogging-categories5/eventviews.categories
 %{_datadir}/qlogging-categories5/eventviews.renamecategories
+%ghost %{_libdir}/libKPim5EventViews.so.5
+%attr(755,root,root) %{_libdir}/libKPim5EventViews.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/EventViews
-%{_libdir}/cmake/KF5EventViews
-%{_libdir}/libKF5EventViews.so
 %{_libdir}/qt5/mkspecs/modules/qt_EventViews.pri
+%{_includedir}/KPim5/EventViews
+%{_libdir}/cmake/KF5EventViews
+%{_libdir}/cmake/KPim5EventViews
+%{_libdir}/libKPim5EventViews.so
