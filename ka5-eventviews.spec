@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.0
+%define		kdeappsver	23.08.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		eventviews
 Summary:	Library for creating events
 Name:		ka5-%{kaname}
-Version:	23.08.0
+Version:	23.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6a6bc63b518e7932fb2b5f37420e7f8e
+# Source0-md5:	7bf5abc1a3bf0fc5d5b9a6a098220379
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
