@@ -6,6 +6,7 @@
 %define		qtver		5.15.2
 %define		kaname		eventviews
 Summary:	Library for creating events
+Summary(pl.UTF-8):	Biblioteka do tworzenia wydarzeń
 Name:		ka5-%{kaname}
 Version:	23.08.5
 Release:	1
@@ -50,7 +51,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 It contains lib for creating events.
 
 %description -l pl.UTF-8
-Pakiet zawiera bibliotekę do tworzenia zdarzeń.
+Pakiet zawiera bibliotekę do tworzenia wydarzeń.
 
 %package devel
 Summary:	Header files for %{kaname} development
